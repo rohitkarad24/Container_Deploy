@@ -16,7 +16,7 @@ pipeline {
 			steps {
 				sh "cd /mnt/Docker_Dir"
 				sh "sudo docker run -itdp 80:80 httpd"
-				sh "cp index.html /usr/local/apache2/htdocs"
+				sh "cp /mnt/Docker_Dir/index.html /usr/local/apache2/htdocs"
 			}
 		}
 	}
