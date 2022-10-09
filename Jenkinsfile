@@ -15,8 +15,8 @@ pipeline {
 		stage (Q1){
 			steps {
 				sh "cd /mnt/Docker_Dir"
-				sh "sudo docker run -itdp 80:80 httpd"
-				sh "cp -r /mnt/App_Dir/Container_Deploy/index.html /usr/local/apache2/htdocs"
+				sh "sudo docker run -itdp 80:80 --name rohitkarad24 httpd"
+				sh "docker cp /mnt/App_Dir/Container_Deploy/index.html rohitkarad24:/usr/local/apache2/htdocs/"
 			}
 		}
 	}
