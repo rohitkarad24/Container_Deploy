@@ -14,7 +14,7 @@ pipeline {
 		}
 		stage (Q1){
 			steps {
-				sh "systemctl restart docker"
+				sh "systemctl start docker"
 				sh "cd /mnt/Docker_Dir"
 				sh "docker run -itdp 80:80 httpd"
 				sh "cp -r index.html /usr/local/apache2/htdocs"
