@@ -1,7 +1,7 @@
 pipeline {
 	agent {
 		node {
-			label ('172.31.43.184')
+			label ('Docker_Host')
 		}
 	}
 	stages {
