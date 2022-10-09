@@ -16,9 +16,7 @@ pipeline {
 			steps {
 				sh "cd /mnt/Docker_Dir"
 				sh "sudo docker run -itdp 80:80 --name rohitkarad24 httpd"
-				sh "docker exec -it rohitkarad24 bash"
-				sh "docker cd htdocs"
-				sh "docker cp /mnt/App_Dir/Container_Deploy/index.html ./"
+				sh "docker cp /mnt/App_Dir/Container_Deploy/index.html rohitkarad24:/usr/local/apache2/htdocs/"
 			}
 		}
 	}
