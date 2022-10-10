@@ -5,7 +5,7 @@ pipeline {
 		}
 	}
 	stages {
-		stage (git_clone){
+		stage ('git_clone'){
 			steps {
 				sh "cd /mnt/App_Dir"
 				sh "rm -rf *"
@@ -14,12 +14,12 @@ pipeline {
 				}
 			}
 		}
-		stage (remove container) {
+		stage ('remove container') {
 			steps {
 				sh"docker system prune -a -f"
 			}
 		}
-		stage (Q1){
+		stage ('Q1'){
 			steps {
 				sh "cd /mnt/Docker_Dir"
 				sh "sudo docker run -itdp 80:80 --name rohit httpd"
