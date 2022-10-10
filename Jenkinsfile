@@ -5,11 +5,18 @@ pipeline {
 		}
 	}
 	stages {
-	stage (git_clone){
+		stage (git_clone){
 			steps {
 				sh "cd /mnt/App_Dir"
 				sh "rm -rf *"
-				sh "git clone https://github.com/rohitkarad24/Container_Deploy.git"
+				dir('/mnt/App_Dir') {
+					sh "git clone https://github.com/rohitkarad24/Container_Deploy.git"
+				}
+			}
+		}
+		stage (remove container) {
+			steps {
+				sh"docker system prune -a -f"
 			}
 		}
 		stage (Q1){
