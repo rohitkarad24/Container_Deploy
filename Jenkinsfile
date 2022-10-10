@@ -14,7 +14,7 @@ pipeline {
 		}
 		stage ('remove container') {
 			steps {
-				sh"docker system prune -a -f"
+				sh"sudo docker system prune -a -f"
 			}
 		}
 		stage ('Q1'){
