@@ -7,11 +7,9 @@ pipeline {
 	stages {
 		stage ('git_clone'){
 			steps {
-				dir('/mnt/App_Dir') {
-					sh "rm -rf *"
-					sh "git clone https://github.com/rohitkarad24/Container_Deploy.git"
-				}
-			}
+				sh "cd /mnt/App_Dir"
+				sh "rm -rf *"
+				sh "git clone https://github.com/rohitkarad24/Container_Deploy.git"
 		}
 		stage ('remove container') {
 			steps {
