@@ -7,7 +7,7 @@ pipeline {
 	stages {
 		stage ('git_clone'){
 			steps {
-				sh "rm -rf * /mnt/App_Dir/"
+				sh "sudo rm -rf * /mnt/App_Dir/"
 				sh "git clone https://github.com/rohitkarad24/Container_Deploy.git /mnt/App_Dir"
 			}
 		}
