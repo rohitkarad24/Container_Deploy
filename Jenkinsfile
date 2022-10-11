@@ -1,7 +1,7 @@
 pipeline {
 	agent {
 		node {
-			label ('172.31.2.157')
+			label ('172.31.1.181)
 		}
 	}
 	stages {
@@ -9,7 +9,7 @@ pipeline {
 			steps {
 				sh "cd /mnt/App_Dir"
 				sh "rm -rf *"
-				sh "git clone https://github.com/rohitkarad24/Container_Deploy.git"
+				sh "git clone https://github.com/rohitkarad24/Container_Deploy.git /mnt/App_Dir"
 			}
 		}
 		stage ('remove container') {
