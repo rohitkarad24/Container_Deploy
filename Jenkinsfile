@@ -22,7 +22,7 @@ pipeline {
 			steps {
 				sh "cd /mnt/Docker_Dir"
 				sh "sudo docker run -itdp 80:80 --name rohit httpd"
-				sh "sudo docker cp /mnt/App_Dir/Container_Deploy/index.html rohit:/usr/local/apache2/htdocs/"
+				sh "sudo docker cp /mnt/App_Dir/index.html rohit:/usr/local/apache2/htdocs/"
 			}
 		}
 	}
